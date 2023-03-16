@@ -12,21 +12,23 @@ import TableRow from '@mui/material/TableRow';
 import TextField from '@mui/material/TextField';
 import Paper from '@mui/material/Paper';
 
+document.title = 'Ramais Coasul';
+
 function App() {
 
   const [rows, setRows] = useState(ramais);
 
-  const onTextChange = (event:any) => {
+  const onTextChange = (event: any) => {
     const value = event.target.value.toLocaleLowerCase();
-    setRows(ramais.filter(row => (row.ramal.toLocaleLowerCase().includes(value) 
-                                || row.nome.toLocaleLowerCase().includes(value) 
-                                || row.area.toLocaleLowerCase().includes(value) 
-                                || row.unidade.toLocaleLowerCase().includes(value))));
+    setRows(ramais.filter(row => (row.ramal.toLocaleLowerCase().includes(value)
+      || row.nome.toLocaleLowerCase().includes(value)
+      || row.area.toLocaleLowerCase().includes(value)
+      || row.unidade.toLocaleLowerCase().includes(value))));
   }
-  
+
   var rootStyle = {
-    backgroundColor : 'whitesmoke',
-    height : '100vh'
+    backgroundColor: 'whitesmoke',
+    height: '100vh'
   }
 
   return (
@@ -38,14 +40,14 @@ function App() {
 
         <p className='Textfield-container'>
           <TextField fullWidth id="search" label="Buscar" onChange={onTextChange} InputProps={{
-          startAdornment: (
-            <InputAdornment position="start">
-              <AccountCircle />
-            </InputAdornment>
-          ),
-        }}
-        variant="outlined"
-        />
+            startAdornment: (
+              <InputAdornment position="start">
+                <AccountCircle />
+              </InputAdornment>
+            ),
+          }}
+            variant="outlined"
+          />
         </p>
       </header>
       <body className="App-body">
@@ -77,7 +79,7 @@ function App() {
               </TableBody>
             </Table>
           </TableContainer>
-       </p>
+        </p>
       </body>
     </div>
   );
